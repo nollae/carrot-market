@@ -10,12 +10,16 @@ export default function Home() {
       <div className="bg-white shadow-lg p-5 rounded-3xl w-full max-w-screen-sm 
         flex flex-col 
         md:flex-row
-        gap-2">
+        gap-2
+        *:outline-none
+        ring ring-transparent transition-shadow
+        has-[:invalid]:ring-red-100 
+        ">
         <input className='w-full rounded-full h-10 bg-gray-200 pl-5
-          outline-none ring ring-orange-300 ring-transparent focus:ring-green-500 focus:ring-offset-2 transition-shadow
+          ring ring-orange-300 ring-transparent focus:ring-green-500 focus:ring-offset-2 transition-shadow
           invalid:focus:ring-red-500
           peer
-          ' type='email' 
+          ' type='text' 
           required
           placeholder='Search here...'/>
         <span className='text-red-500 font-medium
@@ -24,7 +28,7 @@ export default function Home() {
         </span>
         <button className='bg-black bg-opacity-90 text-white py-2 rounded-full active:scale-90 transition-transform 
           placeholder:drop-shadow
-          font-medium focus:scale-90 outline-none
+          font-medium focus:scale-90
           md:px-10
           peer-invalid:bg-red-100
           peer-required:bg-green-500
